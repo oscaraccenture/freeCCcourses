@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Palindrome Checker</title>
+  </head>
+  <body>
+    <main class="container">
+      <h1 class="title">Is it</h1>
+      <div class="palindrome-div">
+        <label for="text-input">
+          Enter in your text to check for a palindrome</label
+        >
+        <input type="text" id="text-input" class="palindrome-input" />
+        <button id="check-btn" class="palindrome-btn" type="submit">Check</button>
+        <div class="results-div" id="result">
+          <p class="user-input">test text</p>
+        </div>
+      </div>
+      <div class="palindrome-definition-div">
+        <p class="palindrome-definition">
+          <span role="img" aria-label="light-bulb">💡👌</span>
+          " A "
+          <dfn>Palindrome</dfn>
+          " is a word or sentence that's spelled the same way both forward and
+          backward, ignoring punctuation, case, and spacing. "
+        </p>
+      </div>
+    </main>
+
+    <!--  
+You should have an input element with an id of "text-input".
+You should have a button element with an id of "check-btn".
+You should have a div, span or p element with an id of "result".
+When you click on the #check-btn element without entering a value into the #text-input element, an alert should appear with the text Please input a value. -->
+<script src="./main.js"></script>
+</body>
+</html>

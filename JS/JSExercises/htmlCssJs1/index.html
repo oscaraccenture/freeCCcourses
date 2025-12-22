@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Js Exercise</title>
+  </head>
+  <body>
+    <nav>
+      <div class="color_picker">
+        <span id="box_color" class="boxText">Change the box Color</span>
+        <input id="colorPicker" type="color" value="#0000FF" />
+      </div>
+      <br />
+      <div class="margin_modifier">
+        <label id="box_margin" class="boxMargin">Margin:</label>
+        <input type="range" id="marginModifier" />
+      </div>
+      <br />
+      <div class="padding_modifier">
+        <label id="box_padding" for="" class="boxPadding"> Padding:</label>
+        <input type="range" id="paddingModifier" />
+      </div>
+      <br />
+      <div class="border_modifier">
+        <label id="box_border" class="boxBorder"> Border:</label>
+        <input type="range" name="borderBox" id="borderModifier" />
+        <label id="box_border__type" class="boxBorderType"></label>
+        <select id="borderTypeList">
+          <option value="solid" selected>solid</option>
+          <option value="dashed">dashed</option>
+          <option value="groove">groove</option>
+          <option value="dotted">dotted</option>
+          <option value="hidden">hidden</option>
+        </select>
+        <input id="colorPickerBorder" type="color" value="#000000" />
+      </div>
+    </nav>
+
+    <div id="box1" class="box">Contenido</div>
+    <script src="main.js"></script>
+  </body>
+</html>

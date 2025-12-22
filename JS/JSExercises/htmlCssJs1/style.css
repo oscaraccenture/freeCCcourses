@@ -1,0 +1,22 @@
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  margin: 20px;
+  padding: 20px;
+  border: 5px solid black;
+}
+
+.boxText {
+  font-size: 15px;
+  font-weight: bold;
+  width: 15%;
+  border: 5px solid #000000;
+  margin: 5px;
+  padding: 5px;
+}
+
+.boxMargin {
+  margin: 5px;
+  padding: 10px;
+}

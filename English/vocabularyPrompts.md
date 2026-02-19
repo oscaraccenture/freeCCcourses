@@ -55,4 +55,11 @@ Here are some **powerful prompt templates** that meet all your requirements: det
 
 ---
 
-Would you like me to **create one master prompt that combines all these elements into a single, optimized version for consistent use**? Or should I **give you an example output using one of these prompts with a sample sentence**?
+---
+
+### ✅ **Prompt 5: Quick but Complete 2**
+
+    Analyze this sentence: "<sentence>". Correct all mistakes (grammar, spelling, punctuation, style). Then:
+    - Explain each correction briefly.
+    - Provide the corrected sentence.
+---

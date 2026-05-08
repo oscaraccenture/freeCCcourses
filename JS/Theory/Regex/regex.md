@@ -291,7 +291,7 @@ Example:
 ## 16. Practical Example (Validation)
 
 ```js
-const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+   $/
 emailRegex.test('user@test.com')
 ```
 

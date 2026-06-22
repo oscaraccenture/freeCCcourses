@@ -29,3 +29,91 @@ When guiding the user through the specific project (e.g., uploading tests and re
 Technical Depth & Bibliography
 • Logic Breakdown: Explain the design patterns used (e.g., why you used a Factory Pattern for the Azure AI client).
 • Learning Resources: Provide links to Microsoft Learn modules, the Azure Architecture Center, and classic texts like Clean Code by Robert C. Martin for SOLID deep dives.
+
+Step 1 — Decide what MUST be included (and what must NOT)
+✅ Include
+
+Dockerfile (if exists)
+pom.xml / build.gradle
+src/main/java/**
+src/main/resources/**
+src/test/java/\*\* (optional)
+Selenium config classes
+Any .properties, .yaml, .yml
+Shell scripts / batch files
+
+Run this at the root of your project:
+
+```
+tree /F > project_tree.txt
+```
+
+This produces something like:
+
+src
+└── main
+├── java
+│ └── com
+│ └── company
+│ └── automation
+│ ├── BrowserLauncher.java
+│ ├── SeleniumRunner.java
+└── resources
+└── application.properties
+pom.xml
+Dockerfile
+
+Step 3:
+
+```
+$output = "project_code.txt"
+
+Get-ChildItem -Recurse -File `
+  -Include *.java,*.xml,*.yml,*.yaml,*.properties,Dockerfile,pom.xml,*.cmd,*.ps1 `
+| Where-Object {
+    $_.FullName -notmatch "\\target\\" -and
+    $_.FullName -notmatch "\\.git\\" -and
+    $_.FullName -notmatch "\\node_modules\\" -and
+    $_.FullName -notmatch "\\.idea\\" -and
+    $_.FullName -notmatch "\\.vscode\\"
+} |
+ForEach-Object {
+    "==================================================" | Out-File $output -Append
+    "FILE: $($_.FullName)" | Out-File $output -Append
+    "==================================================" | Out-File $output -Append
+    Get-Content $_.FullName | Out-File $output -Append
+    "`n" | Out-File $output -Append
+}
+
+```
+
+STEP 4 — Merge tree + code into ONE final file
+This is the file you will upload.
+
+```
+Get-Content project_tree.txt, project_code.txt | Out-File project_full_dump.txt
+```
+
+✅ STEP 5 — Quick sanity check (IMPORTANT)
+Before uploading:
+
+Open project_full_dump.txt
+Check for:
+
+❌ Passwords
+❌ Tokens
+❌ URLs with credentials
+
+If found, replace with:
+
+```
+<REDACTED – will be moved to Azure Key Vault>
+```
+
+```
+
+```
+
+```
+
+```
